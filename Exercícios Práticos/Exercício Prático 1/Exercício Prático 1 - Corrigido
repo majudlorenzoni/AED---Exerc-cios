@@ -1,0 +1,72 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+    void *pBuffer;
+    int *numeroInt;
+    float *numeroFloat;
+    double *numeroDouble;
+
+    int escolha;
+    int escolha2;
+    do {
+        printf("Qual o tipo de numero que vai adicionar? \n");
+        printf(" 1 - INT \n");
+        printf(" 2 - FLOAT \n");
+        printf(" 3 - DOUBLE \n");
+        printf(" 4 - Parar de adicionar numeros \n");
+        printf(" Digite a sua opcao: ");
+        scanf("%d", &escolha);
+
+    switch (escolha){
+        case 1:
+        pBuffer = (int *)malloc(sizeof(int));
+        numeroInt = pBuffer;
+        printf("Digite o numero que deseja adicionar: ");
+        scanf("%d", numeroInt);
+        printf("Deseja adicionar mais numeros?\n");
+        printf(" 1 - SIM \n");
+        printf(" 2 - NAO \n");
+        scanf("%d", &escolha2);
+        break;
+
+        case 2:
+        pBuffer = (float *)malloc(sizeof(float));
+        numeroFloat = pBuffer;
+        printf("Digite o numero que deseja adicionar: ");
+        scanf("%f", numeroFloat);
+
+        printf("Deseja adicionar mais numeros?\n");
+        printf(" 1 - SIM \n");
+        printf(" 2 - NAO \n");
+        scanf("%d", &escolha2);
+
+        case 3:
+        pBuffer = (double *)malloc(sizeof(double));
+        numeroDouble = pBuffer;
+        printf("Digite o numero que deseja adicionar: ");
+        scanf("%lf", numeroDouble);
+
+        printf("Deseja adicionar mais numeros?\n");
+        printf(" 1 - SIM \n");
+        printf(" 2 - NAO \n");
+        scanf("%d", &escolha2);
+
+        case 4:
+        printf("Valor numero = %d\n", *numeroInt);
+        printf("Valor numero = %f\n", *numeroFloat);
+        printf("Valor numero = %lf\n", *numeroDouble);
+        free(pBuffer);
+        return 0;
+        break;
+        }
+    } while (escolha2 == 1);
+
+    if (escolha2 == 2){
+         printf("Valor numero = %d\n", *numeroInt);
+        printf("Valor numero = %f\n", *numeroFloat);
+        printf("Valor numero = %lf\n", *numeroDouble);
+        free(pBuffer);
+        return 0;
+    } 
+}
