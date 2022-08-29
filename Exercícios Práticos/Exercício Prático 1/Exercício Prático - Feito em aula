@@ -1,0 +1,67 @@
+void *pBuffer;
+int ints;
+float floats;
+double doubles;
+int  escolha;
+
+int main(){
+void *pBuffer = malloc ((sizeof(ints)) + (sizeof(floats)) + (sizeof(doubles)));
+int contador;
+int  escolha2;
+do {
+    printf("Qual o tipo de numero que vai adicionar? \n");
+    printf(" 1 - INT \n");
+    printf(" 2 - FLOAT \n");
+    printf(" 3 - DOUBLE \n");
+    printf(" 4 - Parar de adicionar numeros \n");
+    printf(" Digite a sua opcao: ");
+    scanf("%d", &escolha);
+    switch (escolha){
+    case 1:
+        printf("Digite o numero que deseja armazenar: \n");
+        scanf("%d", &ints);
+        printf("Deseja adicionar mais numeros?\n")/
+        printf(" 1 - SIM \n");
+        printf(" 2 - NAO \n");
+        scanf("%d", &escolha2);
+    break;
+
+    case 2:
+        printf("Digite o numero que deseja armazenar: \n");
+        scanf("%f", &floats);
+        printf("Deseja adicionar mais numeros? \n")/
+        printf(" 1 - SIM \n");
+        printf(" 2 - NAO \n");
+        scanf("%d", &escolha2);
+    break;
+
+    case 3:
+        printf("Digite o numero que deseja armazenar: \n");
+        scanf("%lf", &doubles);
+        printf("Deseja adicionar mais numeros?\n")/
+        printf(" 1 - SIM \n");
+        printf(" 2 - NAO \n");
+        scanf("%d", &escolha2);
+    break;
+
+    case 4:
+        printf(pBuffer);
+        printf("%d \n", ints);3
+        printf("%f \n", floats);
+        printf("%lf \n", doubles);
+    break;
+    
+    default:
+        printf("Opcao invalida, tente novamente");
+    break;
+    }
+
+} while (escolha2 == 1);
+if (escolha2 == 2){
+    printf(pBuffer);
+    printf("%d \n", ints);
+    printf("%f \n", floats);
+    printf("%lf \n", doubles);
+    return 0;
+}
+}
