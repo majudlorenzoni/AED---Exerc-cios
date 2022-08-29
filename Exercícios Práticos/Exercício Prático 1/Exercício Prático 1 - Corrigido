@@ -53,9 +53,9 @@ int main(){
         scanf("%d", &escolha2);
 
         case 4:
-        printf("Valor numero = %d\n", *numeroInt);
-        printf("Valor numero = %f\n", *numeroFloat);
-        printf("Valor numero = %lf\n", *numeroDouble);
+        printf("Numeros Ints = %d\n", *numeroInt);
+        printf("Numeros Floats = %f\n", *numeroFloat);
+        printf("Numeros Double = %lf\n", *numeroDouble);
         free(pBuffer);
         return 0;
         break;
@@ -63,9 +63,9 @@ int main(){
     } while (escolha2 == 1);
 
     if (escolha2 == 2){
-         printf("Valor numero = %d\n", *numeroInt);
-        printf("Valor numero = %f\n", *numeroFloat);
-        printf("Valor numero = %lf\n", *numeroDouble);
+        printf("Numeros Ints = %d\n", *numeroInt);
+        printf("Numeros Floats = %f\n", *numeroFloat);
+        printf("Numeros Double = %lf\n", *numeroDouble);
         free(pBuffer);
         return 0;
     } 
