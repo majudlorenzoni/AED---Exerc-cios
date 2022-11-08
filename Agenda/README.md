@@ -1,6 +1,6 @@
 Trabalho Agenda - Algoritmos e Estruturas de Dados
 
-Crie uma agenda com nome, idade e telefone. 
+Crie uma agenda com nome, idade e telefone. A agenda deve adicionar, buscar, remover e exibir os elementos inseridos.
 Armazene a agenda no pBuffer.
 Trabalho realizado para entender como funciona a memória de um computador.
 
