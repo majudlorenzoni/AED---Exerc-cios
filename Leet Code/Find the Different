@@ -1,0 +1,59 @@
+// Maria Júlia - AED 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char different[];
+/* 
+Você recebe duas strings s e t.
+A string t é gerada pelo embaralhamento aleatório da string s e, em seguida, adiciona mais uma letra em uma posição aleatória.
+Devolva a letra que foi adicionada a t.
+Por exemplo:
+t : "abcd"
+s : "abcde"
+A letra adicionada foi e.
+ */
+
+char findTheDifference(char *s, char *t);
+int compareTwoStrings(char *s, char * t);
+
+char findTheDifference(char * s, char * t){
+
+	if(strcmp(s, t) == 0){
+		printf("The strings are the same\n");
+		exit(0);
+	} else{
+		compareTwoStrings(s, t);
+	}
+}
+
+int compareTwoStrings(char * s, char * t){
+	int flag = 0;
+	int i = 0;
+	char different;
+	while(s[i]!='\0'){
+		if(s[i]!= t[i]){
+			flag = 1;
+			char different = (s[i]);
+			break;
+		}
+		i++;
+	}
+	if(s[i]!= '\0' || t[i]!= '\0'){
+		return 1;
+	}
+	if (flag == 0){
+		return 0;
+	} else {
+		return 1;
+	}
+	if(different != NULL){
+	printf("%s", different);
+		return different;
+}
+}
+	
+int main(){
+	char s[] = "abcde";
+	char t[] = "abcd";
+	char different = findTheDifference(s, t);
+}
