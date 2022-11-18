@@ -270,5 +270,3 @@ void printVetor(int *pVetor, int sizeVetor){
     printf("%d ", pVetor[counter]);
   }
 }
-Footer
-© 2022 Gi
