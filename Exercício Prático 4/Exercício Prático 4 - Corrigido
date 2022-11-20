@@ -1,0 +1,78 @@
+/* MARIA JULIA - TRABALHO PRATICO 4
+Dado um vetor nums contendo n número inteiros positivos e únicos encontre o número
+faltante na sequência. Assuma que somente um número está faltando para completar a
+sequência numérica. 
+exemplo 1:
+nums = [3, 0, 1]
+saida = 2
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int nums[10];
+int tamanhoNums;
+int numsTemporario[10];
+int saida;
+
+void insertionSort(nums, tamanhoNums);
+void ordenaVetor(tamanhoNums);
+void comparaVetores(nums, numsTemporario);
+
+void insertionSort(int nums[], int tamanhoNums)
+{
+    int i, j, aux;
+    for (int i = 1; i < tamanhoNums; i++) {
+        aux = nums[i];
+        j = i - 1;
+        while (j >= 0 && nums[j] > aux) {
+            nums[j + 1] = nums[j];
+            j = j - 1;
+        }
+        nums[j + 1] = aux;
+	 }
+}
+
+void ordenaVetor(tamanhoNums){
+	int numsTemporario[10];
+    int valorTemporario = 0;
+	for(int i = 0; i <= tamanhoNums; i++){
+		numsTemporario[i] = valorTemporario;
+		valorTemporario++;
+    }
+	}
+
+void comparaVetores(int nums[], int numsTemporario[]){
+	int flag = 0;
+	int tamanhoNums = sizeof(nums)/sizeof(nums[0]);
+	int i;
+	for(i = 0; i < tamanhoNums; i++){
+		if(numsTemporario[i] != nums[i]){
+			flag = 1;
+			saida = numsTemporario[i];
+			break;
+		}
+	}
+
+	if(numsTemporario[i]!= '\0' && nums[i]!= '\0'){
+		return 1;
+	}
+
+	if (flag == 0){
+		return 0;
+	} else {
+	if(saida != '\0'){
+	printf("O elemento que faltava no vetor era o numero %d\n", saida);
+	}
+}
+	return;
+}
+
+int main(){
+	int nums[] = {3, 0, 1};
+	int tamanhoNums = sizeof(nums)/sizeof(nums[0]);
+	ordenaVetor(tamanhoNums);
+	insertionSort(nums, tamanhoNums);
+	comparaVetores(nums, numsTemporario);
+	return (0);
+}
