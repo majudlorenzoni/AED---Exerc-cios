@@ -1,25 +1,10 @@
-/* MARIA JULIA - TRABALHO PRATICO 4
-Dado um vetor nums contendo n número inteiros positivos e únicos encontre o número
-faltante na sequência. Assuma que somente um número está faltando para completar a
-sequência numérica. 
-exemplo 1:
-nums = [3, 0, 1]
-saida = 2
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 
-int nums[10];
-int tamanhoNums;
-int numsTemporario[10];
-int saida;
+int insertionSort(int nums[], int tamanhoNums);
+int ordenaVetor(int tamanhoNums);
 
-void insertionSort(nums, tamanhoNums);
-void ordenaVetor(tamanhoNums);
-void comparaVetores(nums, numsTemporario);
-
-void insertionSort(int nums[], int tamanhoNums)
+int insertionSort(int nums[], int tamanhoNums)
 {
     int i, j, aux;
     for (int i = 1; i < tamanhoNums; i++) {
@@ -31,48 +16,47 @@ void insertionSort(int nums[], int tamanhoNums)
         }
         nums[j + 1] = aux;
 	 }
+	return *nums;
 }
 
-void ordenaVetor(tamanhoNums){
-	int numsTemporario[10];
+int *ordenaVetorTemporario(int tamanhoNums){
+	int *numsTemporario = malloc(tamanhoNums * sizeof(int));
     int valorTemporario = 0;
 	for(int i = 0; i <= tamanhoNums; i++){
 		numsTemporario[i] = valorTemporario;
 		valorTemporario++;
     }
+	return numsTemporario;
 	}
 
-void comparaVetores(int nums[], int numsTemporario[]){
+
+int main(){
+
+	int saida;
 	int flag = 0;
-	int tamanhoNums = sizeof(nums)/sizeof(nums[0]);
 	int i;
+
+	int nums[] = {3, 0, 1};
+	int tamanhoNums = sizeof(nums)/sizeof(nums[0]);
+	*nums = insertionSort(nums, tamanhoNums);
+	int *numsTemporario = ordenaVetorTemporario(tamanhoNums);
+	for(int i = 0; i <=tamanhoNums; i++){
+		printf("Vetor temporario[%d] = %d\n", i, numsTemporario [i]);
+	} 
+
 	for(i = 0; i < tamanhoNums; i++){
 		if(numsTemporario[i] != nums[i]){
 			flag = 1;
 			saida = numsTemporario[i];
-			break;
 		}
 	}
-
-	if(numsTemporario[i]!= '\0' && nums[i]!= '\0'){
-		return 1;
-	}
-
 	if (flag == 0){
 		return 0;
 	} else {
 	if(saida != '\0'){
 	printf("O elemento que faltava no vetor era o numero %d\n", saida);
 	}
-}
-	return;
-}
-
-int main(){
-	int nums[] = {3, 0, 1};
-	int tamanhoNums = sizeof(nums)/sizeof(nums[0]);
-	ordenaVetor(tamanhoNums);
-	insertionSort(nums, tamanhoNums);
-	comparaVetores(nums, numsTemporario);
+	}
+	free(numsTemporario);
 	return (0);
 }
